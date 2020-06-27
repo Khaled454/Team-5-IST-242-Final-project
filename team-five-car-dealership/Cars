@@ -1,0 +1,97 @@
+package edu.psu.abington.ist.ist242;
+
+import java.util.ArrayList;
+
+public class Cars {
+
+    private int carID;
+    private String make;
+    private String model;
+    private int year;
+    private String color;
+    private int miles;
+
+
+    //Constructors
+    public Cars(int _carId) {
+        this.carID = _carId;
+    }
+
+    public Cars(int _carID, String _make, String _model, int _year, String _color, int _miles) {
+        this.carID = _carID;
+        this.make = _make;
+        this.model = _model;
+        this.year = _year;
+        this.color = _color;
+        this.miles = _miles;
+    }
+
+    //Setters and Getters
+    public int getcarID() {
+        return carID;
+    }
+    public void setID(int _carID) {
+        this.carID = _carID;
+    }
+    public String getMake() {
+        return make;
+    }
+    public void setMake(String _make) {
+        this.make = _make;
+    }
+    public String getModel() {
+        return model;
+    }
+    public void setModel(String _model) {
+        this.model = _model;
+    }
+    public int getYear() {
+        return year;
+    }
+    public void setYear(int _year) {
+        this.year = _year;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String _color) {
+        this.color = _color;
+    }
+    public int getMiles() {
+        return miles;
+    }
+    public void setMiles(String _miles) {
+        this.color = _miles;
+    }
+
+
+    //Make an arraylist for the WELCOME MENU
+    public static void printCarYearMakeModel(ArrayList<Cars> cList) {
+        for (Cars car : cList) {
+            System.out.println(car.getYear() + " " + car.getMake() + " " + car.getModel() + " (" + car.getColor() + ") \n");
+        }
+    }
+
+
+    //arrayList for searching my make, model, year, and miles
+    public static void printCarByMakeModelYearAndMiles(ArrayList<Cars> cList, String _make) {
+        int i = 1;
+        System.out.println("Ready to Purchase: ");
+
+        for (Cars car : cList) {
+            if (car.make.equals(_make)) {
+                System.out.println(i + ". " + car.getYear() + " " + car.getMake() + " " + car.getModel() + " " + "(" + car.getMiles() + " miles)");
+                i++;
+            }
+        }
+    }
+    
+    //arrayList for searching my Color/make/model
+    public static void printCarByColor(ArrayList<Cars> cList, String _color) {
+        for (Cars car : cList) {
+            if (car.color.equals(_color)) {
+                System.out.println("Car color: " + car.getColor() + " Car Make: " + car.getMake() + " Car Model: " + car.getModel());
+            }
+        }
+    }
+}
